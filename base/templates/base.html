@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %} - Mitos y Leyendas</title>
+		<meta charset="UTF-8">
+		<link href='https://fonts.googleapis.com/css?family=Philosopher:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/loader.css' %}">
+		{% block css_files %}{% endblock %}
+		<script src="{% static 'js/libraries/require.js' %}"></script>
+		<script>
+			requirejs.config({
+				baseUrl: '{% static "js/" %}',
+				urlArgs: 'bust=' + (new Date()).getTime(),
+				paths: {
+					jquery: 'libraries/jquery-2.1.4.min',
+					waitForImages: 'libraries/jquery.waitforimages.min'
+				}
+			});
+			requirejs(['jquery'], function(){
+				$(document).ready(function(){
+					requirejs(['main', {% block js_include %}{% endblock %}]);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		{% include 'includes/loader.html' %}
+		<div id="base-contenido">
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>

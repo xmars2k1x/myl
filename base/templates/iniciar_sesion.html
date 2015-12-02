@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block content %}
+	{% if error %}
+		<div>{{error}}</div>
+	{% endif %}
+	<form action="" method="post">
+		{% csrf_token %}
+		{{formulario}}
+		<input type="submit" value="Iniciar sesión">
+	</form>
+	¿No tienes una cuenta? <span class="url" data-url="/crear-cuenta/">Crea una cuenta aquí</span>
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/iniciar_sesion.css' %}">
+{% endblock %}

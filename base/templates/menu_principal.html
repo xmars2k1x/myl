@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Menú principal{% endblock %}
+
+{% block js_include %}'scripts/menu_principal'{% endblock %}
+
+{% block content %}
+	<ul>
+		<li>
+			<div class="url" data-url="/">Jugar</div>
+		</li>
+		<li>
+			<div class="url" data-url="/">Mazos de cartas</div>
+		</li>
+		<li>
+			<div class="url" data-url="/">Tienda</div>
+		</li>
+		<li>
+			<div class="url" data-url="/cartas/">Cartas</div>
+		</li>
+		<li>
+			<div class="url" data-url="/">Opciones</div>
+		</li>
+		<li>
+			<div class="url" data-url="/cerrar-sesion/">Cerrar sesión</div>
+		</li>
+	</ul>
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/menu_principal.css' %}">
+{% endblock %}
