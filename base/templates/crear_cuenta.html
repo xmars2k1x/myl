@@ -10,7 +10,13 @@
 		{{formulario}}
 		<input type="submit" value="Crear cuenta">
 	</form>
-	¿Ya tienes una cuenta? <span class="url" data-url="/iniciar-sesion/">Inicia sesión aquí</span>
+	¿Ya tienes una cuenta? <span class="link url" data-url="/iniciar-sesion/">Inicia sesión aquí</span>
+	<style>
+		label { display: block; margin-bottom: 15px; }
+		input { display: block; margin-bottom: 15px; }
+		.link { color: red; }
+		.helptext { margin-bottom: 15px; color: blue; }
+	</style>
 {% endblock %}
 
 {% block css_files %}
