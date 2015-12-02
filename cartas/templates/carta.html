@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{carta.nombre}}{% endblock %}
+
+{% block content %}
+	<div>Esto es una carta</div>
+	<div>{{carta.nombre}}</div>
+	<div>{{carta.numero_de_coleccionista}}</div>
+	<div>{{user.username}}</div>
+	<script>
+		var mazo = {{test|safe}};
+	</script>
+	{{user.userprofile.mazo_de_cartas}}
+{% endblock %}
+
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/carta.css' %}">
+{% endblock %}
