@@ -19,7 +19,7 @@ from base import urls as base_urls
 from cartas import urls as cartas_urls
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^we-work-in-the-dark-to-serve-the-light/', include(admin.site.urls)),
     url(r'^', include(base_urls)),
     url(r'^cartas/', include(cartas_urls)),
 ]

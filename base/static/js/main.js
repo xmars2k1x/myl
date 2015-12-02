@@ -9,6 +9,7 @@ define(['waitForImages'], function(){
 			contenido: $('#base-contenido')
 		},
 		inicializar: function(){
+			/*
 			var url = '/static/img/background/menu.png';
 			$('<img>').attr('src', url).load(function(){
 				this.remove();
@@ -17,6 +18,8 @@ define(['waitForImages'], function(){
 					interfaz.mostrarInterfaz();
 				});
 			});
+			*/
+			interfaz.mostrarInterfaz();
 		},
 		mostrarInterfaz: function(){
 			this.elementos.loader.fadeOut(this.config.fadeOutDelay);

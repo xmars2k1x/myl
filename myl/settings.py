@@ -100,3 +100,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+"""Heroku"""
+
+DATABASE_URL = 'postgres://lqwxidkvfgdnea:TKgOB8vZcnXJy0b6Z80vxZCV6G@ec2-54-83-204-228.compute-1.amazonaws.com:5432/debmjvab4benib'
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+# DATABASES['default'] = dj_database_url.config()
+DATABASES = {'default': dj_database_url.parse(DATABASE_URL)}
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
