@@ -23,5 +23,4 @@ def cartas(request):
 @login_required(login_url='/iniciar-sesion/')
 def carta(request, slug):
 	carta = get_object_or_404(Carta, slug=slug)
-	print(request.user.userprofile.mazo_de_cartas)
 	return render(request, 'carta.html', {'carta': carta})

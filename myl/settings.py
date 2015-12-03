@@ -103,7 +103,7 @@ STATIC_URL = '/static/'
 
 """Heroku"""
 
-DATABASE_URL = 'postgres://lqwxidkvfgdnea:TKgOB8vZcnXJy0b6Z80vxZCV6G@ec2-54-83-204-228.compute-1.amazonaws.com:5432/debmjvab4benib'
+DATABASE_URL = 'postgres://agffvqermwlyrt:g2MXycpYXwRVlHiAa8ECmNJbuh@ec2-107-21-223-147.compute-1.amazonaws.com:5432/da4kqrkld16mhm'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
