@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Socket.IO Test{% endblock %}
+
+{% block js_include %}'scripts/test'{% endblock %}
+
+{% block content %}
+	<style>
+		#chat {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 50px;
+			background-color: rgb(25, 30, 25);
+		}
+		#chat div:nth-child(odd){
+			background-color: rgb(45, 50, 45);
+		}
+		#inputz {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 75%;
+			height: 50px;
+			background-color: rgb(125, 175, 125);
+			border: none !important;
+			padding: 0px;
+			margin: 0px !important;
+			font-family: sans-serif;
+			font-size: 17.5px;
+			padding-left: 15px;
+			padding-right: 15px;
+			color: darkred;
+		}
+		#enviar {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 25%;
+			background-color: rgb(155, 205, 155);
+			font-family: sans-serif;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: darkred;
+			font-size: 17.5px;
+			cursor: pointer;
+		}
+		.text {
+			height: 50px;
+			text-align: left;
+			padding-left: 15px;
+			font-size: 17.5px;
+			font-family: sans-serif;
+			line-height: 50px;
+			color: white;
+		}
+	</style>
+
+	<div id="chat">
+		<div class="text">Inicial de prueba automatico</div>
+	</div>
+	<input id="inputz">
+	<div id="enviar">Enviar</div>
+{% endblock %}

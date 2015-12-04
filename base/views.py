@@ -49,3 +49,21 @@ def cerrar_sesion(request):
 @login_required(login_url='/iniciar-sesion/')
 def menu_principal(request):
 	return render(request, 'menu_principal.html')
+
+# Testing
+
+import json
+import redis as Redis
+from django.utils.crypto import get_random_string
+
+redis = Redis.StrictRedis(host='localhost', password='', port=6379, db=0)
+
+def test(request):
+	token = get_random_string(32)
+	key = 'session:%s' % str(token)
+	data = {'user': 'xmars2k1x'}
+	value = json.dumps(data)
+	redis.setex(key, 86400, value)
+	response = render(request, 'test.html')
+	response.set_cookie(key='nodejskey', value=token, max_age=86400, domain=None, secure=None)
+	return response
